@@ -14,20 +14,19 @@ export function AdminTopBar({ items, onOpenNav }: AdminTopBarProps) {
   return (
     <header className="sticky top-0 z-30 shrink-0 border-b-2 border-amber-300/80 bg-gradient-to-r from-[#fefbf3] via-[#fbf5e5] to-[#f9eed5] shadow-md shadow-amber-200/40 backdrop-blur-md dark:border-amber-400/20 dark:bg-none dark:bg-[#12100d] dark:shadow-none">
       <div className="flex min-h-[var(--admin-header-height)] items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-3.5">
-        
         {/* Left: Mobile Nav Button & Breadcrumbs */}
         <div className="flex min-w-0 items-center gap-3">
-          {onOpenNav ? (
-            <button
-              type="button"    
-              aria-label="Open navigation"
-              onClick={onOpenNav}
+          {onOpenNav ? (                       
+            <button                     
+              type="button"                                                
+              aria-label="Open navigation"                     
+              onClick={onOpenNav}                        
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-amber-300/90 bg-white text-amber-700 shadow-sm transition-all hover:bg-amber-500 hover:text-white active:scale-95 lg:hidden dark:border-amber-400/40 dark:bg-[#1e1914] dark:text-amber-300"
-            >
+            >                        
               <Menu className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-            </button>
-          ) : null}
-
+            </button>    
+          ) : null}              
+                              
           {/* Breadcrumb wrapper - Solid Dark background in night mode */}
           <div className="flex items-center rounded-xl border-2 border-amber-300/80 bg-white px-3.5 py-1.5 shadow-xs transition-colors dark:border-amber-400/40 dark:bg-[#1e1914]">
             <BreadcrumbBar 

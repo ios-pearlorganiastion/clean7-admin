@@ -21,7 +21,7 @@ export function ItemForm({
   onCancel,
 }: {
   defaultServiceId?: string;
-  initialItem?: (Partial<CatalogItemResponse> & { basePrice?: number }) | null;
+  initialItem?: (Partial<CatalogItemResponse> & { basePrice?: number; description?: string | null }) | null;
   onSuccess?: () => void;
   onCancel?: () => void;
 }) {
@@ -40,6 +40,7 @@ export function ItemForm({
     defaultValues: {
       serviceId: initialItem?.serviceId ?? defaultServiceId ?? "",
       name: initialItem?.name ?? "",
+      description: initialItem?.description ?? "", // <-- Default value set ki
       pricingType: initialItem?.pricingType ?? "PER_ITEM",
       basePrice: initialItem?.basePrice ?? (initialItem?.price ? Number(initialItem.price) : 0),
       currency: initialItem?.currency ?? "INR",
@@ -119,6 +120,16 @@ export function ItemForm({
             placeholder="e.g. item, piece, kg"
             {...register("unitLabel")}
             hint={errors.unitLabel?.message}
+          />
+        </div>
+
+        {/* Description Field (Full width) */}
+        <div className="col-span-12">
+          <Field
+            label="Description"
+            placeholder="e.g. Woolen, delicate fabric, dry clean only"
+            {...register("description")}
+            hint={errors.description?.message}
           />
         </div>
 

@@ -40,6 +40,7 @@ export const itemSchema = z.object({
   code: z.string().optional(),
   slug: z.string().optional(),
   name: z.string().min(1, "Name is required"),
+  description: z.string().optional().nullable(), // <-- Item description add kiya
   pricingType: z.string().min(1, "Pricing type is required"),
   basePrice: z.coerce.number().min(0, "Price must be positive"),
   currency: z.string().default("INR"),

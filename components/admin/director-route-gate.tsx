@@ -35,10 +35,10 @@ export function isDirectorOnlyAdminPath(pathname: string): boolean {
 export function DirectorRouteGate({
   user,
   children,
-}: {
-  user: AuthUser;
-  children: ReactNode;
-}) {
+}: {        
+  user: AuthUser;     
+  children: ReactNode;     
+}) {      
   const pathname = usePathname();
   const blocked =
     user.role !== "DIRECTOR" && isDirectorOnlyAdminPath(pathname);

@@ -6,7 +6,7 @@ import type { OrderResponse } from "@/lib/types";
 
 export function useOrders(query?: Record<string, string>) {
   return useQuery({
-    queryKey: ["orders", query],
+    queryKey: ["orders", query], 
     queryFn: () =>
       apiRequest<OrderResponse[]>({
         path: "/admin/orders",
